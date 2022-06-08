@@ -42,9 +42,9 @@ class RemoveDuplicatesTest {
             int[] nums = entry.getKey();
             int[] expectedNums = entry.getValue();
 
-            System.out.println(Arrays.toString(nums));
+//            System.out.println(Arrays.toString(nums));
             int k = RemoveDuplicates.removeDuplicates(nums);
-            System.out.println(Arrays.toString(nums));
+//            System.out.println(Arrays.toString(nums));
 
             assertEquals(expectedNums.length, k);
             for (int ii = 0; ii < k; ii++) {
