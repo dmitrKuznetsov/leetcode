@@ -2,15 +2,17 @@ package com.github.dmitrKuznetsov;
 
 // https://leetcode.com/problems/roman-to-integer/
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class RomanToInteger {
     public static int romanToInt(String s) {
         int value = 0;
 
-        List<Integer> list = s.chars()
-                .mapToObj(c -> Roman.valueOf(Character.toString(c)).val())
+        List<Integer> list = Arrays.stream(s.split(""))
+                .map(r -> Roman.valueOf(r).val())
                 .collect(Collectors.toList());
 
         for (int ii = 0; ii < list.size()-1; ii++) {
